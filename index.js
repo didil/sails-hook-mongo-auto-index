@@ -7,7 +7,7 @@ module.exports = function mongoAutoIndexHook(sails) {
     var indexes = [];
 
     _.forIn(sails.models, function (model,modelKey) {
-      if(sails.config.connections[model.connection].adapter !== 'sails-mong'){
+      if(sails.config.connections[model.connection].adapter !== 'sails-mongo'){
         sails.log.verbose('sails-hook-mongo-auto-index: ' + 'skipping model ' + modelKey + ', not a sails-mongo model');
         return;
       }
