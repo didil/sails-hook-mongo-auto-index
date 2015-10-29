@@ -5,6 +5,7 @@
 nbproject
 .idea
 .node_history
+node_modules/
 
 
 # dotEnv

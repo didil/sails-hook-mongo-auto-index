@@ -1,6 +1,6 @@
 {
   "name": "sails-hook-mongo-auto-index",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Sails Hook to auto create mongo indexes",
   "main": "index.js",
   "sails": {
