@@ -20,3 +20,8 @@ name: {
   unique: true
 }
 ````
+
+## Install
+````bash
+npm install --save sails-hook-mongo-auto-index
+````
