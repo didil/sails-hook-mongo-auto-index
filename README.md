@@ -7,16 +7,16 @@ This hook tries to solve this issue by using mongo's ensureIndex function to cre
 
 The indexes are automatically created based on the attributes found on your waterline models : 
 
-````json
-    name: {
-      type: 'string',
-      index: true
-    }
+````js
+name: {
+  type: 'string',
+  index: true
+}
 ````
 Or 
-````json
-    name: {
-      type: 'string',
-      unique: true
-    }
+````js
+name: {
+  type: 'string',
+  unique: true
+}
 ````
