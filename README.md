@@ -5,7 +5,16 @@ In production, sails.js does not create mongo indexes/unique indexes defined on 
   
 This hook tries to solve this issue by using mongo's ensureIndex function to create the indexes in all environments.  
 
-The indexes are automatically created based on the attributes found on your waterline models : 
+## Install
+````bash
+npm install --save sails-hook-mongo-auto-index
+````
+
+## How To
+The only thing you have to do is install the hook.  
+When you install the hook, every time the app is lifted, it checks that the indexes in the db match those defined on
+your waterline models, when it finds an index defined like the examples below, it creates the necessary indexes if they're
+missing.
 
 ````js
 name: {
@@ -21,7 +30,5 @@ name: {
 }
 ````
 
-## Install
-````bash
-npm install --save sails-hook-mongo-auto-index
-````
+## Contributions
+If you think of improvements/bug fixes just fork the repo, make changes and open a pull request ! Thanks
