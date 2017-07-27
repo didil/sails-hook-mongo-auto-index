@@ -13,9 +13,6 @@ module.exports = function mongoAutoIndexHook(sails) {
       }
 
       _.forIn(model.attributes, function (attribute, attributeKey) {
-        if (attribute.primaryKey) {
-          return; // Sails autocreates primary key indexes
-        }
 
         if (attribute.unique) {
           indexes.push(
