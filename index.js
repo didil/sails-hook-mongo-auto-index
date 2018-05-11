@@ -7,14 +7,20 @@ module.exports = function mongoAutoIndexHook(sails) {
     var indexes = [];
 
     _.forIn(sails.models, function (model,modelKey) {
-      if(sails.config.connections[model.connection].adapter !== 'sails-mongo'){
+      if (modelKey == 'archive')
+        return;
+
+      mongodb = sails.config.datastores.default.adapter.mongodb
+      if(typeof mongodb !== 'undefined' && mongodb !== null){
         sails.log.verbose('sails-hook-mongo-auto-index: ' + 'skipping model ' + modelKey + ', not a sails-mongo model');
         return;
       }
 
       _.forIn(model.attributes, function (attribute, attributeKey) {
-
-        if (attribute.unique) {
+        if (attributeKey == 'id')
+          return;
+        org = attribute.autoMigrations
+        if (typeof org !== 'undefined' && org !== null ? org.unique : void 0) {
           indexes.push(
             {
               model: model,
